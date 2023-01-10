@@ -8,7 +8,7 @@ export interface TestCase {
   contact: Awaited<ReturnType<typeof getTestContact>>;
 }
 
-export async function getTestCases(): Promise<TestCase[]> {
+export async function getTestCases1(): Promise<TestCase[]> {
   return [
     {
       testCase: 1,
@@ -25,6 +25,40 @@ export async function getTestCases(): Promise<TestCase[]> {
       contact: await getTestContact(),
     },
   ];
+}
+
+export function getTestCases2() {
+  const account: Account = {
+    id: "123",
+    name: "test",
+  };
+  const someType: SomeType = {
+    someField: "test",
+  };
+  const contact: Contact = {
+    name: "test",
+    email: "test@test.com",
+  };
+  return [
+    {
+      testCase: 1,
+      expected: 1,
+      account,
+      someType,
+      contact,
+    },
+    {
+      testCase: 2,
+      expected: 2,
+      account,
+      someType,
+      contact,
+    },
+  ];
+}
+
+export async function getTestCases3() {
+  return [{ testCase: 1 }, { testCase: 2 }];
 }
 
 export async function getTestAccount() {
