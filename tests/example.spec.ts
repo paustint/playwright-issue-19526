@@ -27,7 +27,7 @@ test.describe("Run Test Cases2", async () => {
 test.describe("Run Test Cases3", async () => {
   const testCases = await getTestCases3();
   testCases.forEach((testCase) => {
-    test(`Test Case 2 ${testCase.testCase}`, async ({ page }) => {
+    test(`Test Case 3 ${testCase.testCase}`, async ({ page }) => {
       await page.goto("https://playwright.dev/");
     });
   });
